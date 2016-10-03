@@ -1,0 +1,8 @@
+[package]
+name = "bing_wallpaper"
+version = "1.0.0-pre"
+authors = [ "13xforever <ilya.veselov@gmail.com>" ]
+
+[dependencies]
+rustc-serialize = "0.3"
+hyper = "0.9"
