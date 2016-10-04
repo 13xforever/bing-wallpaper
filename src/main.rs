@@ -27,8 +27,8 @@ fn main() {
     let mut img_data_response = http_client.get(&img_request_url).send().unwrap();
     assert_eq!(img_data_response.status, hyper::Ok);
 
-    let mut img_buf = Vec::new();
-    img_data_response.read_to_end(&mut img_buf).expect("Bing image response was empty");
+    //let mut img_buf = Vec::new();
+    //img_data_response.read_to_end(&mut img_buf).expect("Bing image response was empty");
 
     //compare md5
 
