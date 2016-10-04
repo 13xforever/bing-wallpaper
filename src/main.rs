@@ -34,13 +34,13 @@ fn main() {
 
     let mut result_path = std::env::home_dir().unwrap();
     result_path.push("Pictures");
-    result_path.push("Bing");
+    //result_path.push("Bing");
     let save_path = result_path.to_str().unwrap();
-    println!("Trying to create directory {:?}", save_path);
-    std::fs::create_dir_all(save_path).expect("Couldn't create output directory");
+    //println!("Trying to create directory {:?}", save_path);
+    //std::fs::create_dir_all(save_path).expect("Couldn't create output directory");
 
-    let result_filename = save_path.to_string() + &"/!latest.jpg";
-    println!("Trying to save as {:?}", result_filename);
+    let result_filename = save_path.to_string() + &"/! latest bing wallpaper.jpg";
+    //println!("Trying to save as {:?}", result_filename);
     let mut output = std::fs::File::create(&result_filename).unwrap();
     //output.write_all(&img_buf);
     std::io::copy(&mut img_data_response, &mut output).expect("Overwritting the latest wallpaper didn't work");
