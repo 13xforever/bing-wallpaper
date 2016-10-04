@@ -1,7 +1,7 @@
 extern crate rustc_serialize;
 extern crate hyper;
 
-use std::io::Read;
+use std::io::prelude::*;
 use rustc_serialize::json;
 use hyper::client::Client;
 
@@ -29,4 +29,19 @@ fn main() {
 
     let mut img_buf = Vec::new();
     img_data_response.read_to_end(&mut img_buf).expect("Bing image response was empty");
+
+    //compare md5
+
+    let mut result_path = std::env::home_dir().unwrap();
+    result_path.push("Pictures");
+    result_path.push("Bing");
+    let save_path = result_path.to_str().unwrap();
+    println!("Trying to create directory {:?}", save_path);
+    std::fs::create_dir_all(save_path).expect("Couldn't create output directory");
+
+    let result_filename = save_path.to_string() + &"/!latest.jpg";
+    println!("Trying to save as {:?}", result_filename);
+    let mut output = std::fs::File::create(&result_filename).unwrap();
+    //output.write_all(&img_buf);
+    std::io::copy(&mut img_data_response, &mut output).expect("Overwritting the latest wallpaper didn't work");
 }
