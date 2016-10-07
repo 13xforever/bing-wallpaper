@@ -32,14 +32,14 @@ fn main() {
 
     //compare md5
 
-    let mut result_path = std::env::home_dir().unwrap();
-    result_path.push("Pictures");
+    //let mut result_path = std::env::home_dir().unwrap();
+    //result_path.push("Pictures");
     //result_path.push("Bing");
-    let save_path = result_path.to_str().unwrap();
+    let save_path = "/usr/share/antergos/wallpapers";
     //println!("Trying to create directory {:?}", save_path);
     //std::fs::create_dir_all(save_path).expect("Couldn't create output directory");
 
-    let result_filename = save_path.to_string() + &"/! latest bing wallpaper.jpg";
+    let result_filename = save_path.to_string() + &"/bing_wallpaper.jpg";
     //println!("Trying to save as {:?}", result_filename);
     let mut output = std::fs::File::create(&result_filename).unwrap();
     //output.write_all(&img_buf);
