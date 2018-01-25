@@ -1,0 +1,9 @@
+<Directives>
+    <Application>
+        <Assembly Name="bing-wallpaper-net">
+            <Type Name="bing_wallpaper_net.Program" Dynamic="Required All" />
+        </Assembly>
+        <Assembly Name="System.Json" />
+        <Assembly Name="mscorlib" />
+    </Application>
+</Directives>
